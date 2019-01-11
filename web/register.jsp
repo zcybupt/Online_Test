@@ -45,10 +45,10 @@
                        placeholder="Retype Password" required>
             </div>
             <div class="form-group">
-                <div class="checkbox i-checks"><label> <input type="checkbox" class="i-checks" required><i></i> Agree
+                <div class="checkbox i-checks"><label> <input id="check" type="checkbox" class="i-checks" required><i></i> Agree
                     the <a href="https://policies.google.com/terms?hl=en">terms and policy</a> </label></div>
             </div>
-            <button id="register-button" type="submit" value="Register" onclick="return registerSubmit()"
+            <button id="register-button" type="button" value="Register" onclick="return registerSubmit()"
                     class="btn btn-primary block full-width m-b">Register
             </button>
 

@@ -64,6 +64,10 @@ function checkUsername() {
 function registerSubmit() {
     //empty??
     var words = '';
+    if (!($('#check').attr('checked'))) {
+        alert("Please agree the terms and policy! ");
+        return false;
+    }
     if ($('#password').val() === '') {
         words = "Password";
     }
@@ -78,12 +82,13 @@ function registerSubmit() {
         alert(words + " cannot be empty! ");
         return false;
     }
+    // alert();
 
 
     //valid email???
     var pattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if (pattern.test($('#email')).val() == false) {
-        alert("Email not valid")
+    if (pattern.test($('#email').val()) == false) {
+        alert("Email not valid");
         return false;
     }
     console.log($('#password1').val() + " " + $('#password').val())
@@ -100,9 +105,9 @@ function registerSubmit() {
         async: false,
         error: function (request) {
             alert("Connection error");
-
         },
         success: function (data) {
+            $("#register-form").submit();
             alert("Register success!");
             return true;
         }
