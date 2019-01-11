@@ -64,7 +64,7 @@ function checkUsername() {
 function registerSubmit() {
     //empty??
     var words = '';
-    if (!($('#check').attr('checked'))) {
+    if (!(document.getElementById("check").checked)) {
         alert("Please agree the terms and policy! ");
         return false;
     }
