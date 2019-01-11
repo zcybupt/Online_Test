@@ -364,9 +364,19 @@
     });
 
     function submitExam(){
-        sessionStorage.setItem("examTimes", "0");
-        $('#re-exam').val("false");
-        $('#exam-form').submit();
+        if (sessionStorage.getItem("examTimes") !== "1") {
+            sessionStorage.setItem("examTimes", "0");
+            $('#re-exam').val("default");
+            $('#exam-form').submit();
+        } else if (sessionStorage.getItem("examTimes") === "1") {
+            sessionStorage.setItem("examTimes", "0");
+            $('#re-exam').val("false");
+            $('#exam-form').submit();
+        }
+
+        // sessionStorage.setItem("examTimes", "0");
+        // $('#re-exam').val("false");
+        // $('#exam-form').submit();
     }
 
     $(function () {

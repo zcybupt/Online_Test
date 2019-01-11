@@ -529,10 +529,10 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Exam ID</th>
-                                        <th>Test Date</th>
+                                        <th>Test Time</th>
                                         <th>Total Score</th>
                                         <th>Threshold to Pass</th>
-                                        <th>Test Times</th>
+                                        <th>Attempt Times</th>
                                         <th>Your Score</th>
                                         <th>Result</th>
                                         <th>&nbsp;</th>
@@ -552,8 +552,8 @@
                                             </td>
                                             <td>${exam.examID}</td>
                                             <td>
-                                                Day:${exam.examID.substring(6,8)}, Mon:${exam.examID.substring(4,6)},
-                                                Year:${exam.examID.substring(0,4)}
+                                                    ${exam.examID.substring(0,4)}/${exam.examID.substring(4,6)}/${exam.examID.substring(6,8)}
+                                                &nbsp;${exam.examID.substring(8,10)}:${exam.examID.substring(10,12)}:${exam.examID.substring(12,14)}
 
                                             </td>
                                             <td>100</td>

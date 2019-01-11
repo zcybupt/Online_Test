@@ -141,8 +141,13 @@
                                                 if (passOrNot.equals("fail")) {
                                                     emotion = ".";
                                                 }
+                                                String id = exam.getExamID();
                                             %>
-                                            Your Mark is <%=exam.getScore()%>/100 here<%=emotion%> You
+                                            Exam ID: <b><%=exam.getExamID()%></b><br>
+                                            Exam Time: <b><%=id.substring(0,4) + "/" + id.substring(4,6)+ "/" + id.substring(6,8) + " " + id.substring(8,10) + ":" + id.substring(10,12) + ":" + id.substring(12,14)%></b><br>
+                                            Attempt Times: <b><%= exam.getExamTime()%></b><br>
+                                            Threshold to Pass: <b><%= exam.getThreshold()%></b><br>
+                                            Your Mark is <b><%=exam.getScore()%></b>/100 here<%=emotion%> You
                                             have <%=passOrNot%> the exam.
                                         </div>
                                     </div>
@@ -158,13 +163,15 @@
                             %>
                             <c:forEach items="${questions}" var="question" varStatus="idx1">
                                 <%
-                                    if (i == 1) {
-                                        out.println("<h3 align=\"center\">Second Exam</h3>");
+                                    if (questions.size() > 5) {
+                                        if (i == 1) {
+                                            out.println("<h3 align=\"center\">Second Attempt</h3>");
+                                        }
+                                        if (i == 6) {
+                                            out.println("<h3 align=\"center\">First Attempt</h3>");
+                                        }
+                                        i++;
                                     }
-                                    if (i == 6) {
-                                        out.println("<h3 align=\"center\">First Exam</h3>");
-                                    }
-                                    i++;
                                 %>
                                 <div class="col-lg-12">
                                     <div class="ibox ">

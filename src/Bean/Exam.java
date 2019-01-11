@@ -16,7 +16,7 @@ public class Exam {
     public Exam() {
         Random random = new Random();
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         String dateString = simpleDateFormat.format(date);
         this.examID = dateString + String.format("%04d", random.nextInt(9999));
     }
